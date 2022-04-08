@@ -5,7 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/utils/jwt-auth.guard';
 
-//@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @ApiTags('Users')
 @Controller('users')
 export class UsersController {
@@ -17,7 +17,7 @@ export class UsersController {
     return this.usersService.create(createUserDto);
   }
 
-  
+
   @Get()
   findAll() {
     return this.usersService.findAll();
