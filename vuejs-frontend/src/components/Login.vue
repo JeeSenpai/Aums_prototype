@@ -66,7 +66,7 @@ export default {
                     alert('Please enter correct credentials')
                 }
                 else{
-                    localStorage.setItem('access_token', result.data.access_token);   
+                    localStorage.setItem('access_token', result.data.access_token); 
                     this.$router.push({name: 'home'});
                 }
               }); 

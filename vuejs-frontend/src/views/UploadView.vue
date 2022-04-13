@@ -9,6 +9,13 @@
 import NavBar from '@/components/NavBar.vue'
 
 export default {
-    components: { NavBar }
+    components: { NavBar },
+
+    mounted() {
+    const token = localStorage.getItem('access_token');
+		if (!token) {
+			this.$router.push("/login");
+		}
+	}
 }
 </script>

@@ -9,7 +9,7 @@
           name="name"
           v-model="posts.name"
           :class="{ invalid: isSubmitting && !posts.name.trim() }"
-          class="px-4 py-3 w-full rounded-md border bg-gray-100  border-gray-500 focus:bg-white focus:ring-0 text-sm"
+          class="px-4 py-3 w-full rounded-md border bg-gray-100 border-gray-500 focus:bg-white focus:ring-0 text-sm"
           placeholder="Full Name"
       />
        <input
@@ -17,7 +17,7 @@
           name="username"
           v-model="posts.username"
           :class="{ invalid: isSubmitting && !posts.username.trim() }"
-          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100 border-transparent border-gray-500 focus:bg-white focus:ring-0 text-sm"
+          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100 border-gray-500 focus:bg-white focus:ring-0 text-sm"
           placeholder="Username"
       />
       <input
@@ -25,7 +25,7 @@
           name="email"
           v-model="posts.email"
           :class="{ invalid: isSubmitting && !posts.email.trim() }"
-          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100  border-gray-500 focus:bg-white focus:ring-0 text-sm"
+          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100 border-gray-500 focus:bg-white focus:ring-0 text-sm"
           placeholder="Email address"    
       />
       <input
@@ -33,7 +33,7 @@
           name="password"
           v-model="posts.password"   
           :class="{ invalid: isSubmitting && !posts.password.trim() }"
-          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100  border-gray-500 focus:bg-white focus:ring-0 text-sm"
+          class="px-4 py-3 mt-4 w-full rounded-md border bg-gray-100 border-gray-500 focus:bg-white focus:ring-0 text-sm"
           placeholder="Password"
       />
       <button
@@ -80,8 +80,8 @@ export default {
             .every(Boolean);
 
             if (formValid) {
-              axios.post('http://localhost:8000/users', this.posts).then((result)=>{
-              alert("Created", result);
+              const {data} = axios.post('http://localhost:8000/users', this.posts).then((result)=>{
+              alert("New user succesfully created", result);
               this.$router.push({name: 'login'});
               });
             } 
